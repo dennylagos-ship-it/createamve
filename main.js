@@ -11,10 +11,11 @@
   function initCanales() {
     var urls = {
       whatsapp: B.whatsapp ? "https://wa.me/" + String(B.whatsapp).replace(/\D/g, "") : "",
+      correo: B.correo ? "mailto:" + B.correo : "",
       instagram: B.instagram ? "https://www.instagram.com/" + String(B.instagram).replace(/^@/, "") : ""
     };
     var wa = String(B.whatsapp || "").replace(/\D/g, "");
-    var textos = { whatsapp: wa ? "+" + wa.slice(0, 2) + " " + wa.slice(2, 5) + "-" + wa.slice(5) : "", instagram: B.instagram ? "@" + String(B.instagram).replace(/^@/, "") : "" };
+    var textos = { whatsapp: wa ? "+" + wa.slice(0, 2) + " " + wa.slice(2, 5) + "-" + wa.slice(5) : "", correo: B.correo || "", instagram: B.instagram ? "@" + String(B.instagram).replace(/^@/, "") : "" };
     document.querySelectorAll("[data-canal]").forEach(function (a) {
       var c = a.getAttribute("data-canal");
       if (urls[c]) {
