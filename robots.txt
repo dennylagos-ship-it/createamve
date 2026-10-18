@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /PENDIENTES.md
+Disallow: /README.md
+
+Sitemap: https://peru-swallow-795492.hostingersite.com/sitemap.xml

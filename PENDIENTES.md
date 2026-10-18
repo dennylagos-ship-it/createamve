@@ -14,6 +14,10 @@ Cuando todo esté completo, quita la clase `modo-borrador` de `<body>` en `index
 - Para agregar una pieza: guarda la imagen en esa carpeta y copia un bloque `<article class="work">`.
 - Reels: 6 videos en `assets/video/` (mp4 comprimido + portada .webp). Confirmar el nombre del cliente de cada uno.
 
+## Dominio y SEO
+- La web está en el dominio temporal `peru-swallow-795492.hostingersite.com` y Hostinger la actualiza sola con cada cambio en GitHub (`main`).
+- Cuando haya dominio propio, reemplaza ese dominio temporal en `index.html` (canonical, og:url, og:image, twitter:image y JSON-LD), `robots.txt` y `sitemap.xml`.
+
 ## Testimonios
 Sección comentada en `index.html`. Se activa solo con testimonios reales y con permiso.
 
