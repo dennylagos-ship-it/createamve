@@ -6,7 +6,7 @@ Cuando todo esté completo, quita la clase `modo-borrador` de `<body>` en `index
 ## Contacto (se edita en un solo lugar: `lib/manifest.js`)
 - WhatsApp: número con código de país, solo dígitos. Activa el botón flotante y el formulario.
 - Correo.
-- Instagram: usuario sin @ (¿`createamve`?).
+- Instagram: listo (`createamve`).
 - Otras redes del pie de página: bloque `footer__social` en `index.html`.
 
 ## Textos (`index.html`)
