@@ -217,6 +217,33 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   background: var(--amarillo); border: 0; font: 700 1.6rem/1 var(--f-body); color: var(--fondo);
 }
 
+/* ---------- Reels ---------- */
+.reels { background: linear-gradient(to bottom, transparent, rgba(255, 154, 0, .05) 40%, transparent); }
+.clips {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 1fr); gap: 14px;
+  overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; scrollbar-width: thin; scrollbar-color: var(--borde) transparent;
+}
+.clip { scroll-snap-align: start; }
+.clip__btn {
+  position: relative; display: block; width: 100%; padding: 0; border: 1px solid var(--borde); border-radius: 24px; overflow: hidden;
+  background: var(--capa); cursor: pointer; color: var(--texto); font: inherit; text-align: left;
+}
+.clip__btn video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; transition: transform .6s var(--ease); }
+.clip__btn:hover video { transform: scale(1.03); }
+.clip__play {
+  position: absolute; top: 14px; right: 14px; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--amarillo); transition: transform .25s var(--ease);
+}
+.clip__play svg { width: 20px; height: 20px; fill: var(--fondo); margin-left: 2px; }
+.clip__btn:hover .clip__play { transform: scale(1.12); }
+.clip__info {
+  position: absolute; inset: auto 0 0 0; padding: 70px 16px 16px; display: grid; gap: 2px;
+  background: linear-gradient(to top, rgba(12, 12, 16, .95), transparent);
+}
+.clip__info strong { font-family: var(--f-display); font-size: .98rem; line-height: 1.2; }
+.clip__info span { font-size: .85rem; color: var(--suave); }
+.lightbox--video video { display: block; max-height: 88vh; width: auto; max-width: 100%; border-radius: 20px; background: #000; }
+
 /* ---------- Nosotros ---------- */
 .about__grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(36px, 7vw, 100px); align-items: center; }
 .about__logo { position: relative; padding: clamp(28px, 5vw, 56px); border-radius: 36px; background: var(--capa); border: 1px solid var(--borde); }
@@ -368,6 +395,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .channel { grid-template-columns: 1fr auto; }
   .channel__v { grid-column: 1; grid-row: 2; }
   .channel__arrow { grid-row: 1 / span 2; grid-column: 2; }
-  .lightbox__close { top: 8px; right: 8px; }
+  .lightbox__close { top: 8px; right: 8px; z-index: 2; }
+  .clips { grid-auto-columns: 62%; }
   .modo-borrador [data-pendiente]::after { font-size: 9px; }
 }

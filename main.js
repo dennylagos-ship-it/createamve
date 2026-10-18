@@ -160,6 +160,32 @@
     box.addEventListener("click", function (e) { if (e.target === box) box.close(); });
   }
 
+  // Reels: vista previa sin sonido al pasar el cursor y reproductor con sonido al tocar
+  function initReels() {
+    var puedeHover = window.matchMedia("(hover: hover)").matches;
+    var box = document.getElementById("videobox");
+    var player = document.getElementById("videoboxPlayer");
+    document.querySelectorAll(".clip__btn").forEach(function (b) {
+      var v = b.querySelector("video");
+      if (puedeHover && v) {
+        b.addEventListener("mouseenter", function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); });
+        b.addEventListener("mouseleave", function () { v.pause(); });
+      }
+      b.addEventListener("click", function () {
+        if (v) v.pause();
+        if (!box || typeof box.showModal !== "function") { window.open(b.getAttribute("data-video"), "_blank"); return; }
+        player.src = b.getAttribute("data-video");
+        box.showModal();
+        var p = player.play(); if (p && p.catch) p.catch(function () {});
+      });
+    });
+    if (!box) return;
+    function cerrar() { player.pause(); player.removeAttribute("src"); player.load(); box.close(); }
+    document.getElementById("videoboxClose").addEventListener("click", cerrar);
+    box.addEventListener("click", function (e) { if (e.target === box) cerrar(); });
+    box.addEventListener("cancel", function () { player.pause(); });
+  }
+
   function init() {
     document.documentElement.classList.remove("no-js");
     safe(initCanales, "canales");
@@ -169,6 +195,7 @@
     safe(initFrase, "frase");
     safe(initForm, "form");
     safe(initPortafolio, "portafolio");
+    safe(initReels, "reels");
     var y = document.getElementById("year");
     if (y) y.textContent = new Date().getFullYear();
   }

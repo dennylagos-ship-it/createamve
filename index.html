@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261018c">
-  <script defer src="lib/manifest.js?v=20261018c"></script>
-  <script defer src="main.js?v=20261018c"></script>
+  <link rel="stylesheet" href="styles.css?v=20261018d">
+  <script defer src="lib/manifest.js?v=20261018d"></script>
+  <script defer src="main.js?v=20261018d"></script>
 </head>
 <body class="modo-borrador">
 
@@ -26,6 +26,7 @@
     <nav class="nav__links" id="menu" aria-label="Principal">
       <a href="#servicios">Servicios</a>
       <a href="#portafolio">Portafolio</a>
+      <a href="#reels">Reels</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#proceso">Proceso</a>
       <a href="#contacto" class="nav__cta">Hablemos</a>
@@ -46,7 +47,7 @@
             <span class="line"><span class="grad">contenido</span></span>
             <span class="line">que se queda.</span>
           </h1>
-          <p class="hero__lead" data-pendiente="Frase de presentación">En Crea Teamve diseñamos piezas, grabamos videos y gestionamos redes para que tu marca se vea y se escuche como es.</p>
+          <p class="hero__lead">En Crea Teamve diseñamos piezas, grabamos videos y gestionamos redes para que tu marca se vea y se escuche como es.</p>
           <div class="hero__ctas">
             <a href="#contacto" class="btn btn--accent">Hablemos de tu proyecto <span aria-hidden="true">→</span></a>
             <a href="#portafolio" class="btn btn--line">Ver trabajos</a>
@@ -59,7 +60,7 @@
     </section>
 
     <!-- Marcas: tomadas de los trabajos del portafolio -->
-    <div class="ticker" aria-label="Marcas con las que hemos trabajado" data-pendiente="Confirmar marcas">
+    <div class="ticker" aria-label="Marcas con las que hemos trabajado">
       <div class="ticker__track">
         <span>Bahía Bar</span><i>✳</i><span>Super Pepsi</span><i>✳</i><span>Cueros Jasimay</span><i>✳</i><span>Y13 Pro</span><i>✳</i>
         <span aria-hidden="true">Bahía Bar</span><i>✳</i><span aria-hidden="true">Super Pepsi</span><i>✳</i><span aria-hidden="true">Cueros Jasimay</span><i>✳</i><span aria-hidden="true">Y13 Pro</span><i>✳</i>
@@ -67,14 +68,13 @@
     </div>
 
     <!-- 3. SERVICIOS -->
-    <!-- PENDIENTE: dejar solo los servicios que Crea Teamve confirme -->
     <section class="section" id="servicios">
       <div class="wrap">
         <header class="head">
           <p class="kicker">Servicios</p>
           <h2 class="h2">Todo lo que tu marca necesita para <span class="grad">verse en redes</span>.</h2>
         </header>
-        <div class="bento" data-pendiente="Confirmar servicios">
+        <div class="bento">
           <article class="tile tile--xl reveal">
             <span class="tile__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h11a2 2 0 0 1 2 2v1.5l4-2.5v12l-4-2.5V17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/></svg></span>
             <h3>Creación de contenido</h3>
@@ -200,7 +200,64 @@
             </button>
           </article>
         </div>
-        <p class="note" data-pendiente="Videos y reels">También producimos videos y reels. Pronto los verás aquí.</p>
+      </div>
+    </section>
+
+    <!-- REELS: videos comprimidos en assets/video/ (mp4 + portada .webp) -->
+    <!-- PENDIENTE: confirmar nombres de los clientes de cada video -->
+    <section class="section reels" id="reels">
+      <div class="wrap">
+        <header class="head head--row">
+          <div>
+            <p class="kicker">Reels y video</p>
+            <h2 class="h2">Contenido que <span class="grad">se mueve</span>.</h2>
+          </div>
+          <p class="lead">Grabamos, editamos y subtitulamos videos verticales listos para Instagram y TikTok. Toca uno para verlo con sonido.</p>
+        </header>
+        <div class="clips">
+          <article class="clip reveal">
+            <button type="button" class="clip__btn" data-video="assets/video/super-pepsi.mp4" aria-label="Ver video: Promo en tienda">
+              <video src="assets/video/super-pepsi.mp4" poster="assets/video/super-pepsi.webp" muted loop playsinline preload="none"></video>
+              <span class="clip__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+              <span class="clip__info"><strong>Promo en tienda</strong><span>Super Pepsi</span></span>
+            </button>
+          </article>
+          <article class="clip reveal">
+            <button type="button" class="clip__btn" data-video="assets/video/dra-marie-ronquidos.mp4" aria-label="Ver video: ¿Tu hijo ronca?">
+              <video src="assets/video/dra-marie-ronquidos.mp4" poster="assets/video/dra-marie-ronquidos.webp" muted loop playsinline preload="none"></video>
+              <span class="clip__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+              <span class="clip__info"><strong>¿Tu hijo ronca?</strong><span>Dra. Marie</span></span>
+            </button>
+          </article>
+          <article class="clip reveal">
+            <button type="button" class="clip__btn" data-video="assets/video/bahia-pool-bar.mp4" aria-label="Ver video: Pool Bar: fin de semana">
+              <video src="assets/video/bahia-pool-bar.mp4" poster="assets/video/bahia-pool-bar.webp" muted loop playsinline preload="none"></video>
+              <span class="clip__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+              <span class="clip__info"><strong>Pool Bar: fin de semana</strong><span>Bahía Bar</span></span>
+            </button>
+          </article>
+          <article class="clip reveal">
+            <button type="button" class="clip__btn" data-video="assets/video/keratina-luna.mp4" aria-label="Ver video: Cuidado del cabello">
+              <video src="assets/video/keratina-luna.mp4" poster="assets/video/keratina-luna.webp" muted loop playsinline preload="none"></video>
+              <span class="clip__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+              <span class="clip__info"><strong>Cuidado del cabello</strong><span>Keratina Luna</span></span>
+            </button>
+          </article>
+          <article class="clip reveal">
+            <button type="button" class="clip__btn" data-video="assets/video/david-servicio-tecnico.mp4" aria-label="Ver video: Cómo llegar a la tienda">
+              <video src="assets/video/david-servicio-tecnico.mp4" poster="assets/video/david-servicio-tecnico.webp" muted loop playsinline preload="none"></video>
+              <span class="clip__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+              <span class="clip__info"><strong>Cómo llegar a la tienda</strong><span>Servicio técnico David</span></span>
+            </button>
+          </article>
+          <article class="clip reveal">
+            <button type="button" class="clip__btn" data-video="assets/video/citologia.mp4" aria-label="Ver video: Lo que nadie te dice de la citología">
+              <video src="assets/video/citologia.mp4" poster="assets/video/citologia.webp" muted loop playsinline preload="none"></video>
+              <span class="clip__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+              <span class="clip__info"><strong>Lo que nadie te dice de la citología</strong><span>Salud</span></span>
+            </button>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -211,33 +268,29 @@
           <img src="assets/img/freddy.webp" alt="Freddy, de Crea Teamve" width="800" height="1000" loading="lazy">
           <figcaption class="about__tag">
             <img src="assets/img/logo-negativo-sm.webp" alt="" width="216" height="239">
-            <span><strong>Freddy</strong><small data-pendiente="Cargo">Crea Teamve</small></span>
+            <span><strong>Freddy</strong><small>Crea Teamve</small></span>
           </figcaption>
         </figure>
         <div>
           <p class="kicker">Nosotros</p>
           <p class="statement" data-words>Somos un equipo creativo que convierte ideas en contenido para redes. Diseñamos, grabamos y publicamos con un mismo objetivo: que tu marca conecte con su gente.</p>
-          <div class="about__text" data-pendiente="Historia de Crea Teamve">
-            <p>Aquí va la historia de Crea Teamve: cómo nació, quiénes forman el equipo y qué tipo de marcas acompaña.</p>
-          </div>
           <dl class="facts">
-            <div data-pendiente="Años de experiencia"><dt>Experiencia</dt><dd>— años</dd></div>
+            <div><dt>Experiencia</dt><dd>Más de 10 años</dd></div>
             <div><dt>Base</dt><dd>San Cristóbal, Táchira, Venezuela</dd></div>
-            <div><dt>Clientes</dt><dd>Bares, tiendas y marcas</dd></div>
+            <div><dt>Clientes</dt><dd>Comercios en general</dd></div>
           </dl>
         </div>
       </div>
     </section>
 
     <!-- 5. PROCESO -->
-    <!-- PENDIENTE: confirmar que este proceso refleja cómo trabaja Crea Teamve -->
     <section class="section" id="proceso">
       <div class="wrap">
         <header class="head">
           <p class="kicker">Cómo trabajamos</p>
           <h2 class="h2">Del primer mensaje a la publicación.</h2>
         </header>
-        <ol class="steps" data-pendiente="Confirmar proceso">
+        <ol class="steps">
           <li class="step reveal"><span class="step__n">01</span><h3>Conversamos</h3><p>Nos cuentas sobre tu marca, qué necesitas y qué quieres lograr.</p></li>
           <li class="step reveal"><span class="step__n">02</span><h3>Revisamos</h3><p>Miramos tus redes, tu público y lo que ya funciona.</p></li>
           <li class="step reveal"><span class="step__n">03</span><h3>Proponemos</h3><p>Te enviamos qué haremos, en qué plazos y con qué entregables.</p></li>
@@ -297,7 +350,7 @@
       <div class="footer__top">
         <img src="assets/img/logo-negativo-sm.webp" alt="Crea Teamve" width="216" height="239" class="footer__logo">
         <nav class="footer__nav" aria-label="Pie de página">
-          <a href="#servicios">Servicios</a><a href="#portafolio">Portafolio</a><a href="#nosotros">Nosotros</a><a href="#proceso">Proceso</a><a href="#contacto">Contacto</a>
+          <a href="#servicios">Servicios</a><a href="#portafolio">Portafolio</a><a href="#reels">Reels</a><a href="#nosotros">Nosotros</a><a href="#proceso">Proceso</a><a href="#contacto">Contacto</a>
         </nav>
         <!-- PENDIENTE: redes confirmadas -->
         <div class="footer__social" data-pendiente="Redes sociales"><a href="#" data-canal="instagram" target="_blank" rel="noopener">Instagram ↗</a></div>
@@ -310,6 +363,11 @@
   <dialog class="lightbox" id="lightbox" aria-label="Trabajo ampliado">
     <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Cerrar">×</button>
     <img id="lightboxImg" src="" alt="">
+  </dialog>
+
+  <dialog class="lightbox lightbox--video" id="videobox" aria-label="Video">
+    <button type="button" class="lightbox__close" id="videoboxClose" aria-label="Cerrar">×</button>
+    <video id="videoboxPlayer" controls playsinline></video>
   </dialog>
 
   <a class="fab" href="#" data-canal="whatsapp" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
