@@ -94,3 +94,8 @@
 #   RewriteCond %{REQUEST_FILENAME}.html -f
 #   RewriteRule ^(.+?)/?$ $1.html [L]
 # </IfModule>
+
+# ----- No servir notas internas (README, PENDIENTES) -----
+<FilesMatch "\.md$">
+  Require all denied
+</FilesMatch>
