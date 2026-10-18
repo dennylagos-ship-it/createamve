@@ -22,4 +22,4 @@ Cuando todo esté completo, quita la clase `modo-borrador` de `<body>` en `index
 Sección comentada en `index.html`. Se activa solo con testimonios reales y con permiso.
 
 ## Publicar en Hostinger
-Sube el contenido de esta carpeta (incluido `.htaccess`) a `public_html`. Al cambiar CSS o JS, cambia `?v=20261018d` en `index.html` por otro valor.
+Sube el contenido de esta carpeta (incluido `.htaccess`) a `public_html`. Al cambiar CSS o JS, cambia `?v=20261018f` en `index.html` por otro valor.

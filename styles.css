@@ -167,7 +167,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .tile:hover::before { opacity: 1; }
 .tile--xl { grid-column: span 2; grid-row: span 2; display: flex; flex-direction: column; justify-content: flex-end; min-height: 360px;
   background: radial-gradient(120% 90% at 100% 0%, rgba(255, 154, 0, .22), transparent 55%), var(--capa); }
-.tile--wide { grid-column: span 2; }
+.tile--wide { grid-column: 1 / -1; display: flex; align-items: center; gap: 24px;
+  background: linear-gradient(100deg, rgba(255, 196, 0, .12), rgba(242, 32, 43, .10) 70%, transparent), var(--capa); }
+.tile--wide .tile__icon { margin-bottom: 0; flex: none; }
+.tile__body { flex: 1; }
+.tile__cta { flex: none; }
+.tile__fan { position: absolute; top: 34px; right: 30px; width: 46%; height: 62%; pointer-events: none; }
+.tile__fan img { position: absolute; top: 0; right: 0; width: 56%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, .12); box-shadow: 0 18px 40px rgba(0, 0, 0, .5); transition: transform .5s var(--ease); }
+.tile__fan img:nth-child(1) { transform: translate(-62%, 14%) rotate(-12deg); }
+.tile__fan img:nth-child(2) { transform: translate(-30%, 4%) rotate(-4deg); }
+.tile__fan img:nth-child(3) { transform: rotate(6deg); }
+.tile--xl:hover .tile__fan img:nth-child(1) { transform: translate(-80%, 16%) rotate(-16deg); }
+.tile--xl:hover .tile__fan img:nth-child(2) { transform: translate(-36%, 0) rotate(-3deg); }
+.tile--xl:hover .tile__fan img:nth-child(3) { transform: translate(6%, -4%) rotate(9deg); }
 .tile__icon { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: var(--capa-2); border: 1px solid var(--borde); margin-bottom: 22px; }
 .tile--xl .tile__icon { margin-bottom: auto; background: var(--amarillo); border: 0; }
 .tile__icon svg { width: 24px; height: 24px; fill: var(--amarillo); }
@@ -371,7 +384,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* ---------- Tablet ---------- */
 @media (max-width: 1024px) {
   .bento { grid-template-columns: repeat(2, 1fr); }
-  .tile--xl { grid-row: auto; min-height: 300px; }
+  .tile--xl { grid-row: auto; min-height: 0; }
+  .tile__fan { position: relative; top: auto; right: auto; order: -1; width: min(340px, 88%); height: 300px; margin: -10px 0 12px auto; }
+  .tile--xl .tile__icon { position: absolute; top: 30px; left: 28px; }
+  .tile--xl h3 { margin-top: 0; }
   .steps { grid-template-columns: repeat(2, 1fr); row-gap: 36px; }
   .steps::before { display: none; }
   .contact__card { grid-template-columns: 1fr; }
@@ -388,6 +404,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .reel { height: 380px; transform: rotate(-4deg) scale(1.05); margin-inline: -8px; }
   .bento { grid-template-columns: 1fr; }
   .tile--xl, .tile--wide { grid-column: auto; }
+  .tile__fan { width: 78%; height: 230px; margin-top: 40px; }
+  .tile--wide { flex-direction: column; align-items: flex-start; gap: 0; }
+  .tile--wide .tile__icon { margin-bottom: 22px; }
+  .tile__cta { margin-top: 20px; width: 100%; }
   .works { columns: 2; column-gap: 10px; }
   .work { margin-bottom: 10px; }
   .work__info { padding: 40px 12px 12px; }
