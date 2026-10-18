@@ -4,8 +4,7 @@ Versión provisional. En la página, lo pendiente aparece con un recuadro rojo p
 Cuando todo esté completo, quita la clase `modo-borrador` de `<body>` en `index.html` para ocultar las marcas y el aviso superior.
 
 ## Contacto (se edita en un solo lugar: `lib/manifest.js`)
-- WhatsApp: número con código de país, solo dígitos. Activa el botón flotante y el formulario.
-- Correo.
+- WhatsApp: listo (+58 412-0671940). Es el único canal de contacto; el formulario y el botón flotante abren WhatsApp.
 - Instagram: listo (`createamve`).
 - Otras redes del pie de página: bloque `footer__social` en `index.html`.
 
@@ -22,4 +21,4 @@ Cuando todo esté completo, quita la clase `modo-borrador` de `<body>` en `index
 Sección comentada en `index.html`. Se activa solo con testimonios reales y con permiso.
 
 ## Publicar en Hostinger
-Sube el contenido de esta carpeta (incluido `.htaccess`) a `public_html`. Al cambiar CSS o JS, cambia `?v=20261018f` en `index.html` por otro valor.
+Sube el contenido de esta carpeta (incluido `.htaccess`) a `public_html`. Al cambiar CSS o JS, cambia `?v=20261018g` en `index.html` por otro valor.

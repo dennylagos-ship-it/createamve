@@ -349,12 +349,32 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 /* ---------- WhatsApp flotante ---------- */
 .fab {
-  position: fixed; right: 18px; bottom: 18px; z-index: 50; width: 58px; height: 58px; border-radius: 50%;
-  background: #25D366; display: grid; place-items: center; box-shadow: 0 10px 30px -6px rgba(37, 211, 102, .6); transition: transform .2s ease;
+  position: fixed; right: 20px; bottom: 20px; z-index: 50; width: 62px; height: 62px; border-radius: 50%;
+  background: linear-gradient(145deg, #2EE87A, #1FAF55); display: grid; place-items: center;
+  box-shadow: 0 12px 34px -6px rgba(37, 211, 102, .65), inset 0 1px 0 rgba(255, 255, 255, .35);
+  transition: transform .3s var(--ease); animation: fab-entra .7s var(--ease) 1s both;
 }
-.fab:hover { transform: scale(1.08); }
-.fab svg { width: 28px; height: 28px; fill: #fff; }
+.fab::before, .fab::after {
+  content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #25D366; pointer-events: none;
+  animation: fab-onda 2.6s ease-out infinite;
+}
+.fab::after { animation-delay: 1.3s; }
+.fab:hover { transform: scale(1.1) rotate(-6deg); }
+.fab svg { width: 30px; height: 30px; fill: #fff; position: relative; animation: fab-sacude 5s ease-in-out 3s infinite; }
+.fab__label {
+  position: absolute; right: calc(100% + 12px); top: 50%; white-space: nowrap; pointer-events: none;
+  font: 700 .9rem/1 var(--f-body); color: #0B0B0F; background: #fff; padding: 10px 14px; border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .35); opacity: 0; transform: translate(10px, -50%);
+  transition: opacity .3s ease, transform .3s var(--ease); animation: fab-globo 7s ease 2.5s 1 both;
+}
+.fab__label::after { content: ""; position: absolute; right: -5px; top: 50%; width: 10px; height: 10px; background: #fff; transform: translateY(-50%) rotate(45deg); border-radius: 2px; }
+.fab:hover .fab__label, .fab:focus-visible .fab__label { opacity: 1; transform: translate(0, -50%); animation: none; }
 .fab.is-hidden { display: none; }
+@keyframes fab-entra { from { opacity: 0; transform: scale(.3) translateY(40px); } }
+@keyframes fab-onda { from { transform: scale(1); opacity: .7; } to { transform: scale(1.9); opacity: 0; } }
+@keyframes fab-sacude { 0%, 86%, 100% { transform: rotate(0); } 88% { transform: rotate(-16deg); } 91% { transform: rotate(14deg); } 94% { transform: rotate(-8deg); } 97% { transform: rotate(5deg); } }
+@keyframes fab-globo { 0% { opacity: 0; transform: translate(10px, -50%); } 8%, 85% { opacity: 1; transform: translate(0, -50%); } 100% { opacity: 0; transform: translate(10px, -50%); } }
+@media (prefers-reduced-motion: reduce) { .fab, .fab::before, .fab::after, .fab svg, .fab__label { animation: none; } .fab::before, .fab::after { display: none; } }
 
 /* ---------- Aparición ---------- */
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s var(--ease); }

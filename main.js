@@ -11,10 +11,10 @@
   function initCanales() {
     var urls = {
       whatsapp: B.whatsapp ? "https://wa.me/" + String(B.whatsapp).replace(/\D/g, "") : "",
-      correo: B.correo ? "mailto:" + B.correo : "",
       instagram: B.instagram ? "https://www.instagram.com/" + String(B.instagram).replace(/^@/, "") : ""
     };
-    var textos = { whatsapp: B.whatsapp ? "+" + String(B.whatsapp).replace(/\D/g, "") : "", correo: B.correo || "", instagram: B.instagram ? "@" + String(B.instagram).replace(/^@/, "") : "" };
+    var wa = String(B.whatsapp || "").replace(/\D/g, "");
+    var textos = { whatsapp: wa ? "+" + wa.slice(0, 2) + " " + wa.slice(2, 5) + "-" + wa.slice(5) : "", instagram: B.instagram ? "@" + String(B.instagram).replace(/^@/, "") : "" };
     document.querySelectorAll("[data-canal]").forEach(function (a) {
       var c = a.getAttribute("data-canal");
       if (urls[c]) {
@@ -97,13 +97,12 @@
     pinta();
   }
 
-  // El formulario arma el mensaje y lo abre en WhatsApp (o en el correo si no hay WhatsApp)
+  // El formulario arma el mensaje y lo abre en WhatsApp
   function initForm() {
     var form = document.getElementById("contactForm");
     var nota = document.getElementById("formNote");
     if (!form) return;
     var boton = form.querySelector("button[type=submit]");
-    if (!B.whatsapp && B.correo) boton.textContent = "Enviar por correo";
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       nota.className = "form__note";
@@ -121,9 +120,6 @@
       if (B.whatsapp) {
         window.open("https://wa.me/" + String(B.whatsapp).replace(/\D/g, "") + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
         nota.textContent = "Se abrió WhatsApp con tu mensaje. Solo falta enviarlo.";
-      } else if (B.correo) {
-        window.location.href = "mailto:" + B.correo + "?subject=" + encodeURIComponent("Proyecto con Crea Teamve") + "&body=" + encodeURIComponent(texto);
-        nota.textContent = "Se abrió tu correo con el mensaje listo.";
       } else {
         nota.textContent = "El contacto aún no está configurado en esta versión provisional.";
         nota.classList.add("is-error");

@@ -9,7 +9,7 @@ Abre `index.html` en el navegador, o sirve la carpeta con `python3 -m http.serve
 - `index.html`: contenido de todas las secciones.
 - `styles.css`: diseño. Los colores y fuentes están en las variables de `:root`.
 - `main.js`: menú, animaciones, filtros del portafolio y formulario (abre WhatsApp con el mensaje).
-- `lib/manifest.js`: datos de contacto (WhatsApp, correo, Instagram).
+- `lib/manifest.js`: datos de contacto (WhatsApp e Instagram).
 - `assets/img/`: logo, foto y trabajos del portafolio.
 - `.htaccess`: caché y tipos de archivo para Hostinger.
 
