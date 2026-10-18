@@ -121,7 +121,7 @@
         window.open("https://wa.me/" + String(B.whatsapp).replace(/\D/g, "") + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
         nota.textContent = "Se abrió WhatsApp con tu mensaje. Solo falta enviarlo.";
       } else {
-        nota.textContent = "El contacto aún no está configurado en esta versión provisional.";
+        nota.textContent = "El contacto aún no está configurado todavía.";
         nota.classList.add("is-error");
       }
     });
